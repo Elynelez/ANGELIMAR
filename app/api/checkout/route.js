@@ -23,7 +23,7 @@ export async function POST(req) {
                 return {
                     title: item.name,
                     quantity: Number(item.quantity),
-                    unit_price: Number(item.price.replace("$", ""))*100,
+                    unit_price: Number(String(item.price).replace("$", ""))*100,
                     currency_id: "COP"
                 }
             }),

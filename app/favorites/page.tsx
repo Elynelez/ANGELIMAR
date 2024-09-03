@@ -55,7 +55,7 @@ const CartPage = () => {
 
     const calculateTotal = () => {
         const total = cartItems.reduce(
-            (acc, item) => acc + Number(item.price.replace("$", "")) * item.quantity,
+            (acc, item) => acc + Number(String(item.price).replace("$", "")) * item.quantity,
             0
         );
         setTotalAmount(total);
@@ -113,7 +113,7 @@ const CartPage = () => {
                                                 </span>
                                             </td>
                                             <td className="py-4 text-gray-700">
-                                                {Number(product.price.replace("$", ""))}
+                                                {Number(String(product.price).replace("$", ""))}
                                             </td>
                                             <td className="py-4">
                                                 <div className="flex items-center">
@@ -156,7 +156,7 @@ const CartPage = () => {
                                                 </div>
                                             </td>
                                             <td className="py-4 text-gray-700">
-                                                {product.quantity * Number(product.price.replace("$", ""))}
+                                                {product.quantity * Number(String(product.price).replace("$", ""))}
                                             </td>
                                             <td className="py-4">
                                                 <button
